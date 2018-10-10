@@ -1,0 +1,17 @@
+body {
+    background-color: black
+};
+
+p {
+    color: aqua;
+    font-family: fantasy;
+};
+
+h1 {
+    color: whitesmoke;
+    text-decoration: wavy;
+    opacity: .75;
+}
+
+
+
