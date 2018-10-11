@@ -1,6 +1,16 @@
+* {
+    box-sizing: border-box;
+    border-style: solid 1px;
+    border-width: 5px;
+    border-color: orange;
+    font-family: 'Orbitron', sans-serif ;
+}
+
 #star{
+    font-family: 'Orbitron', sans-serif !important;
     background-image: url("spaceImages/small-sky-space-dark-galaxy.jpg") !important;
 }
+
 
 
 
