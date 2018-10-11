@@ -1,6 +1,8 @@
 const analyzeFace = function(apiKey, apiSecret, faceToken) {
 
-    const analysisURL = `https://api-us.faceplusplus.com/facepp/v3/face/analyze?api_key=${apiKey}&api_secret=${apiSecret}&face_tokens=${faceToken}&return_attributes=gender`;
+    const attributes = `gender,age,emotion,skinstatus,headpose`;
+
+    const analysisURL = `https://api-us.faceplusplus.com/facepp/v3/face/analyze?api_key=${apiKey}&api_secret=${apiSecret}&face_tokens=${faceToken}&return_attributes=${attributes}`;
 
     console.log(analysisURL);
 
