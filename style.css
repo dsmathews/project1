@@ -1,17 +1,7 @@
-body {
-    background-color: black
-};
-
-p {
-    color: aqua;
-    font-family: fantasy;
-};
-
-h1 {
-    color: whitesmoke;
-    text-decoration: wavy;
-    opacity: .75;
+#star{
+    background-image: url("spaceImages/small-sky-space-dark-galaxy.jpg") !important;
 }
+
 
 
 
