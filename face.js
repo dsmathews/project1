@@ -1,3 +1,26 @@
+const analyzeFace = function(apiKey, apiSecret, faceToken) {
+
+    const analysisURL = `https://api-us.faceplusplus.com/facepp/v3/face/analyze?api_key=${apiKey}&api_secret=${apiSecret}&face_tokens=${faceToken}&return_attributes=gender`;
+
+    console.log(analysisURL);
+
+    $.ajax({
+        url: analysisURL,
+        method: 'POST',
+    }).then(function (response) {
+
+        console.log(response);
+
+    }).catch(function () {
+        alert("Could not retrieve the information. Please try again later.")
+    });
+
+
+
+
+}
+
+
 const requestFace = function (image) {
 
     const apiKey = "z3RiaROksCQrhNWjl9AanKkCbEDUtV5W";
@@ -20,8 +43,8 @@ const requestFace = function (image) {
             console.log(`Top: ${e.face_rectangle.top}`);
             console.log(`left: ${e.face_rectangle.left}`);
             console.log(`Face token: ${e.face_token}`);
+            analyzeFace(apiKey, apiSecret, e.face_token);
         });
-
 
     }).catch(function () {
         alert("Could not retrieve the information. Please try again later.")
