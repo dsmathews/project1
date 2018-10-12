@@ -51,7 +51,7 @@ const analyzeFace = function(apiKey, apiSecret, faceToken, face, cb) {
 }
 
 
-const requestFace = function (image, cb) {
+const requestFace = function (image,cb) {
 
     const apiKey = "z3RiaROksCQrhNWjl9AanKkCbEDUtV5W";
     const apiSecret = "rF3gmv1TiXk2Mco19sYSMvcl71lCfUfm";
