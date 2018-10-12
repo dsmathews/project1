@@ -50,7 +50,8 @@
                         myUploadWidget = cloudinary.openUploadWidget({
                             cloudName: 'dyais46lc', uploadPreset: 'tqz7drcd'
                         }, (error, result) => {
-                            console.log(error, result)
+                            console.log(result);
+                            // console.log(result.object.info.secure_url);
                          });
                     }, false);
                 </script>

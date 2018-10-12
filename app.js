@@ -30,7 +30,6 @@ let faceResult = {
 
 requestFace(image, function (faceResult) {
     console.log(`Face information: ${faceResult.age}`);
-<<<<<<< HEAD
 
     // $("img#mv-test").imgAreaSelect({ x1: 207, y1: 207, x2: 446, y2:  339});
 
@@ -38,10 +37,7 @@ requestFace(image, function (faceResult) {
     console.log("test");
 
 });
-=======
-});
 
 $(".submitDeclare").on("click", translate);
 
 
->>>>>>> d3c95ead60a5c053cf803738d61f67d68833228d
