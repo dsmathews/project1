@@ -14,16 +14,6 @@ const translate = function(preset, text) {
         console.log(typeof ans);
         $("body").text(ans);
         //return ans;
-        
-        do { 
-            console.log(0);
-            if(ans) {
-                console.log(1);
-                return ans;
-            }
-        } while(!ans);
-        
-
     })
 }
 
