@@ -1,0 +1,24 @@
+{
+  "name": "project1",
+  "version": "1.0.0",
+  "description": "Gt Tech Bootcamp project 1",
+  "main": "app.js",
+  "dependencies": {
+    "cloudinary": "^1.11.0",
+    "require": "^2.4.20"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dsmathews/project1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dsmathews/project1/issues"
+  },
+  "homepage": "https://github.com/dsmathews/project1#readme"
+}
