@@ -1,4 +1,17 @@
-const analyzeFace = function(apiKey, apiSecret, faceToken) {
+let faceInformation = {
+    height:"",
+    width:"",
+    top:"",
+    left:"",
+    gender:"",
+    age:"",
+    emotion:{},
+    skinstatus:{},
+    headpose:{}
+
+}
+
+const analyzeFace = function(apiKey, apiSecret, faceToken, face, cb) {
 
     const attributes = `gender,age,emotion,skinstatus,headpose`;
 
@@ -13,6 +26,21 @@ const analyzeFace = function(apiKey, apiSecret, faceToken) {
 
         console.log(response);
 
+        faceInformation.height = face[0].face_rectangle.height;
+        faceInformation.width = face[0].face_rectangle.width;
+        faceInformation.top = face[0].face_rectangle.top;
+        faceInformation.left = face[0].face_rectangle.left;
+
+        faceInformation.gender = response.faces[0].attributes.gender.value; 
+        faceInformation.age = response.faces[0].attributes.age.value;
+        faceInformation.emotion = response.faces[0].attributes.emotion;
+        faceInformation.skinstatus = response.faces[0].attributes.skinstatus;
+        faceInformation.headpose = response.faces[0].attributes.headpose;
+
+        console.log(`Analyze: ${faceInformation.height}`);
+
+        cb(faceInformation);
+
     }).catch(function () {
         alert("Could not retrieve the information. Please try again later.")
     });
@@ -23,7 +51,7 @@ const analyzeFace = function(apiKey, apiSecret, faceToken) {
 }
 
 
-const requestFace = function (image) {
+const requestFace = function (image, cb) {
 
     const apiKey = "z3RiaROksCQrhNWjl9AanKkCbEDUtV5W";
     const apiSecret = "rF3gmv1TiXk2Mco19sYSMvcl71lCfUfm";
@@ -35,25 +63,38 @@ const requestFace = function (image) {
         method: 'POST',
     }).then(function (response) {
 
-        console.log(response.faces);
-
         const face = response.faces;
 
-        face.forEach(function (e) {
-            console.log(`Height: ${e.face_rectangle.height}`);
-            console.log(`width: ${e.face_rectangle.width}`);
-            console.log(`Top: ${e.face_rectangle.top}`);
-            console.log(`left: ${e.face_rectangle.left}`);
-            console.log(`Face token: ${e.face_token}`);
-            analyzeFace(apiKey, apiSecret, e.face_token);
-        });
-
+        analyzeFace(apiKey, apiSecret, face[0].face_token, face, cb);
+        
     }).catch(function () {
         alert("Could not retrieve the information. Please try again later.")
     });
 
 }
 
-const image = "https://res.cloudinary.com/dyais46lc/image/upload/v1539213797/40648536_10156056664519285_7445547226065010688_n.jpg"
+const clipFace = function(information){
 
-requestFace(image);
+    const width = information.width;
+    const height = information.height;
+
+    // url = cloudinary.image("40648536_10156056664519285_7445547226065010688_n.jpg", {gravity: "face", height: height, width: width, crop: "fill"})
+
+    // url = `https://res.cloudinary.com/dyais46lc/image/upload/c_fill,g_face,h_${height},w_${width}/v1539307306/40648536_10156056664519285_7445547226065010688_n.jpg`;
+    url = `https://res.cloudinary.com/dyais46lc/image/upload/c_crop,g_face,h_${height},w_${width}/v1539310622/faceSquare.jpg`;
+
+    const pictureDiv = $("<div>").addClass("makiko-test");
+
+    // const faceImg = $("img").attr("src", url);
+    // faceImg.attr("id", "mv-test");
+
+    const faceImg = $("<img>");
+    faceImg.attr("src", url);
+    faceImg.attr("id", "mv-test");
+    faceImg.addClass("img-fluid");
+
+    pictureDiv.append(faceImg);
+
+    $("#makiko").append(pictureDiv);
+
+}

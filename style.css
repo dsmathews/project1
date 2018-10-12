@@ -1,6 +1,29 @@
-#star{
-    background-image: url("spaceImages/small-sky-space-dark-galaxy.jpg") !important;
+* {
+    box-sizing: border-box;
+    border-style: solid 1px;
+    border-width: 5px;
+    border-color: orange;
+    font-family: 'Orbitron', sans-serif ;
 }
+
+body{
+    background-image: url(spaceImages/small-sky-space-dark-galaxy.jpg)
+}
+
+#star{
+    font-family: 'Orbitron', sans-serif !important;
+    
+}
+
+#warped{
+    background-image: url("spaceImages/small-sky-space-dark-galaxy.jpg");
+    font-family: 'Orbitron', sans-serif !important;   
+}
+
+#dc {
+    margin-right: 50px; 
+}
+
 
 
 
