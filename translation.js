@@ -17,22 +17,8 @@ const translate = function(preset, text) {
     })
 }
 
-//https://en.wikipedia.org/wiki/Percent-encoding
-//Test section
+//Test section, change lata
 let text = "Hello sir! my mother goes with me to the ocean.";
 let preset = "pirate";
 userSpecies = preset;
 console.log(translate(userSpecies, text));
-
-/*
-let a;
-let i = 0;
-
-while (!a) {
-	if(i===5) {
-	  a=6;  
-  }
-  i+=1;
-  console.log(i);
-}
-*/
