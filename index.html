@@ -34,45 +34,28 @@
             </div>
         </div>
     </header>
-    <div class="row">
-        <div class="card col-md-5">
-            <div class="card-body" style="height:28rem;">
-                <!-- picture input -->
-                <!-- <input type="file" class="form-control-file" id="pictureInput"> -->
-
-                <a href="#" id="upload_widget_opener">Upload multiple images</a>
-
-                <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
-
-                <script type="text/javascript">
-                    var myUploadWidget;
-                    document.getElementById("upload_widget_opener").addEventListener("click", function () {
-                        myUploadWidget = cloudinary.openUploadWidget({
-                            cloudName: 'dyais46lc', uploadPreset: 'tqz7drcd'
-                        }, (error, result) => {
-                            console.log(result);
-                            // console.log(result.object.info.secure_url);
-                         });
-                    }, false);
-                </script>
-            </div>
-        </div>
-        <div class="card col-md-3" style="height:16rem;">
-            <div class="card-header">
-                Facial Analysis
-            </div>
-            <div class="card-body" id="facialAnalysis">
-                this
-                is
-                a text
-                of
-                facial analysis
     <div class="wrapper mt-0 bg-dark text-success" style="font-family:'orbitron', sans-serif">
         <div class="row">
-            <div class="card col-md-3 bg-dark">
-                <div class="card-body" style="height:16rem;">
-                    picture input
-                    <input type="file" class="form-control-file" id="pictureInput">
+            <div class="card bg-dark col-md-3">
+                <div class="card-body" style="height: 16rem;">
+                    <!-- picture input -->
+                    <!-- <input type="file" class="form-control-file" id="pictureInput"> -->
+
+                    <a href="#" id="upload_widget_opener" class="btn btn-success text-white">Upload multiple images</a>
+
+                    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+
+                    <script type="text/javascript">
+                        var myUploadWidget;
+                        document.getElementById("upload_widget_opener").addEventListener("click", function () {
+                            myUploadWidget = cloudinary.openUploadWidget({
+                                cloudName: 'dyais46lc', uploadPreset: 'tqz7drcd'
+                            }, (error, result) => {
+                                console.log(result);
+                                // console.log(result.object.info.secure_url);
+                            });
+                        }, false);
+                    </script>
                 </div>
             </div>
             <div class="card col-md-4 bg-dark" style="height:17rem;">
