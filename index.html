@@ -14,7 +14,7 @@
     <title>Customs Agency</title>
 </head>
 
-<body>
+<body class="bg-dark">
     <header class="rounded">
         <div id="star" class="jumbotron jumbotron-fluid clearfix rounded bg-primary" style="font-family:'orbitron', sans-serif">
             <div class="container clearfix bg-dark rounded">
@@ -66,50 +66,67 @@
                 a text
                 of
                 facial analysis
+    <div class="wrapper mt-0 bg-dark text-success" style="font-family:'orbitron', sans-serif">
+        <div class="row">
+            <div class="card col-md-3 bg-dark">
+                <div class="card-body" style="height:16rem;">
+                    picture input
+                    <input type="file" class="form-control-file" id="pictureInput">
+                </div>
             </div>
-        </div>
-        <div class="card col-md-4" style="height:16rem;">
-            <div class="card-header">
-                Universal Passport
+            <div class="card col-md-4 bg-dark" style="height:17rem;">
+                <div class="card-header">
+                    Facial Analysis
+                </div>
+                <div class="card-body" id="facialAnalysis">
+                    this
+                    is
+                    a text
+                    of
+                    facial analysis
+                </div>
             </div>
-            <div class="card-body" id="statusWindow">
-                this
-                is
-                a text
-                of
-                Universal Passport
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-7 card" style="height:15rem;">
-            <div class="card-header">
-                Do you have anything declare?
-            </div>
-            <div class="card-body">
-                <div class="form-group">
-                    <textarea class="form-control" id="userDeclare" rows="3"></textarea>
-                    <br>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="card col-md-5 bg-dark" style="height:17rem;">
+                <div class="card-header">
+                    Universal Passport
+                </div>
+                <div class="card-body" id="statusWindow">
+                    this
+                    is
+                    a text
+                    of
+                    Universal Passport
                 </div>
             </div>
         </div>
-        <div class="card col-md-5 float-sm-right" style="height:15rem;">
-
-            <div class="card-header">
-                Status Window
+        <div class="row">
+            <div class="card col bg-dark" style="height:28rem;">
+                <div class="card-header">
+                    Do you have anything to declare?
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <textarea class="form-control" id="userDeclare"></textarea>
+                        <br>
+                        <button type="submit" class="submitDeclare btn btn-primary">Translate</button>
+                    </div>
+                </div>
             </div>
+            <div class="card col bg-dark" style="height:28rem;">
 
-            <div class="card-body" id="statusWindow">
-                this
-                is
-                a text
-                of
-                status window
-            </div>
+                <div class="card-header">
+                    Status Window
+                </div>
 
-        </div><br>
+                <div class="card-body" id="statusWindow">
+                    <p>APPROVED</p>
+                    <p>-</p>
+                    <p>PLEASE SEE THE CUSTOMS AGENT FOR FURTHER DETAILS</p>
+                </div>
 
+            </div><br>
+
+        </div>
     </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -132,6 +149,7 @@
 
 <!--My Javascript file-->
 <script src="./face.js"></script>
+<script src="translation.js"></script>
 <script src="./app.js"></script>
 
 </html>
