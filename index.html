@@ -16,9 +16,9 @@
 
 <body class="bg-dark">
 
-        <script src="./face.js"></script>
-        <script src="translation.js"></script>
-        <script src="./app.js"></script>
+    <script src="./face.js"></script>
+    <script src="translation.js"></script>
+    <script src="./app.js"></script>
 
     <header class="rounded">
         <div id="star" class="jumbotron jumbotron-fluid clearfix rounded bg-primary" style="font-family:'orbitron', sans-serif">
@@ -27,7 +27,7 @@
                     <img src="spaceImages/ufpCrest.jpeg" class="img-fluid border border-primary img-thumbnail rounded-circle float-left mt-3 ml-2"
                         alt="responsive image">
                 </div>
-                <div class="bg-dark text-success mt-5">
+                <div class="bg-dark text-success mt-2">
                     <h1 class=" mt-5 text-center align-content-stretch ">Galactic Spaceport</h1>
                 </div>
                 <div class="ml-3 bg-dark text-success text-center clearfix">
@@ -68,11 +68,7 @@
                     Facial Analysis
                 </div>
                 <div class="card-body" id="facialAnalysis">
-                    this
-                    is
-                    a text
-                    of
-                    facial analysis
+                    <p>Placeholder Text</p>
                 </div>
             </div>
             <div class="card col-md-5 bg-dark" style="height:17rem;">
@@ -87,19 +83,47 @@
                     <p>SCALES:</p>
 
 
-                    </div>
                 </div>
             </div>
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-                crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-                crossorigin="anonymous"></script>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card col-md-4 col-xs-12 bg-dark" style="height:28rem;">
+            <div class="card-header">
+                Do you have anything to declare?
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <textarea class="form-control" id="userDeclare"></textarea>
+                    <br>
+                    <button type="submit" class="submitDeclare btn btn-primary">Translate</button>
+                </div>
+            </div>
+        </div>
+        <div class="card col-md-8 col-xs-12 bg-dark text-success" style="height:28rem;">
 
-            <script>
-                cloudinary.setCloudName("dyais46lc");
-            </script>
+            <div class="card-header">
+                Status Window
+            </div>
+
+            <div class="card-body" id="statusWindow">
+                <p>APPROVED</p>
+                <p>-</p>
+                <p>PLEASE SEE THE CUSTOMS AGENT FOR FURTHER DETAILS</p>
+            </div>
+
+        </div><br>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script>
+        cloudinary.setCloudName("dyais46lc");
+    </script>
 
 
 
