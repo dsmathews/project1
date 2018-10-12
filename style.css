@@ -6,9 +6,22 @@
     font-family: 'Orbitron', sans-serif ;
 }
 
+body{
+    background-image: url(spaceImages/small-sky-space-dark-galaxy.jpg)
+}
+
 #star{
     font-family: 'Orbitron', sans-serif !important;
-    background-image: url("spaceImages/small-sky-space-dark-galaxy.jpg") !important;
+    
+}
+
+#warped{
+    background-image: url("spaceImages/small-sky-space-dark-galaxy.jpg");
+    font-family: 'Orbitron', sans-serif !important;   
+}
+
+#dc {
+    margin-right: 50px; 
 }
 
 
