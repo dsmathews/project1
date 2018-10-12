@@ -20,3 +20,7 @@ let faceResult = {
 requestFace(image, function (faceResult) {
     console.log(`Face information: ${faceResult.age}`);
 });
+
+$(".submitDeclare").on("click", translate);
+
+

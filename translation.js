@@ -1,24 +1,23 @@
-const userSpecies;
+const userSpecies = "pirate"; //temporary preset
 
-const translate = function(preset, text) {
-    const inputText = encodeURIComponent(text).replace("!", "%21");
+
+const translate = function() {
+    const text = $("#userDeclare").val();
+    const inputText = encodeURIComponent(text).replace("!", "%21").replace("%0A", "");
     const corsAnywhere = "https://cors-anywhere.herokuapp.com/";
     const URL = "https://api.funtranslations.com/translate/";
-    const queryURL = corsAnywhere + URL + preset + ".json?text=" + inputText;
+    const queryURL = corsAnywhere + URL + userSpecies + ".json?text=" + inputText;
     $.ajax({
         url: queryURL,
         method: 'GET'
     }).then(function(response) {
-        let ans = response.contents.translated;
-        console.log(ans);
-        console.log(typeof ans);
-        $("body").text(ans);
-        //return ans;
+        const ans = response.contents.translated;
+        $("#userDeclare").val(ans);
     })
 }
 
-//Test section, change lata
+/*Test section, change lata
 let text = "Hello sir! my mother goes with me to the ocean.";
 let preset = "pirate";
 userSpecies = preset;
-console.log(translate(userSpecies, text));
+*/
