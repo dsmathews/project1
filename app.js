@@ -26,6 +26,8 @@ $(document).ready(function () {
                 let facePlusUrl = result.info.url;
                 let pictureName = result.info.path;
 
+                renderPassportPicture(facePlusUrl);
+
 
                 requestFace(facePlusUrl, function (faceResult) {
 
@@ -41,17 +43,5 @@ $(document).ready(function () {
         }, false);
 
     });
-    // const image = "https://res.cloudinary.com/dyais46lc/image/upload/v1539310622/faceSquare.jpg"
-
-    // requestFace(facePlusUrl, function (faceResult) {
-
-
-    //     console.log(`Face information: ${faceResult.age}`);
-
-    //     clipFace(faceResult);
-    //     console.log("test");
-
-    // });
-
 
 });

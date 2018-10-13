@@ -13,6 +13,21 @@
 
     }
 
+    const renderPassportPicture = function(faceUrl){
+
+        const pictureDiv = $("<div>").addClass("passport-picture");
+
+        const faceImg = $("<img>");
+        faceImg.attr("src", faceUrl);
+        faceImg.attr("id", "passport-picture");
+        faceImg.attr("height", "200");
+
+        pictureDiv.append(faceImg);
+
+        $("#passport-picture").append(pictureDiv);
+
+    }
+
     const analyzeFace = function (apiKey, apiSecret, faceToken, face, cb) {
 
         const attributes = `gender,age,emotion,skinstatus,headpose`;
@@ -86,19 +101,17 @@
         // url = `https://res.cloudinary.com/dyais46lc/image/upload/c_fill,g_face,h_${height},w_${width}/v1539307306/40648536_10156056664519285_7445547226065010688_n.jpg`;
         url = `https://res.cloudinary.com/dyais46lc/image/upload/c_crop,g_face,h_${height},w_${width}/${pictureName}`;
 
-        const pictureDiv = $("<div>").addClass("makiko-test");
-
-        // const faceImg = $("img").attr("src", url);
-        // faceImg.attr("id", "mv-test");
+        const pictureDiv = $("<div>").addClass("alien-picture");
 
         const faceImg = $("<img>");
         faceImg.attr("src", url);
         faceImg.attr("id", "mv-test");
-        faceImg.addClass("img-fluid");
+        faceImg.addClass("user-picture");
+        faceImg.attr("height", "200");
 
         pictureDiv.append(faceImg);
 
-        $("#statusWindow").append(pictureDiv);
+        $("#alien-picture").append(pictureDiv);
 
     }
 
