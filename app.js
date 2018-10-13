@@ -20,12 +20,7 @@
         //Display determined species
         
 
-//Determine species/language using Face++ attributes.
-    //Greater value of emotion determines ...
-    //Throw age into the equation
-    //Make sure results in a variety of species..
 
-    //Display species/language on translator area.
 
 
 
@@ -37,6 +32,7 @@
             //Add ideas for back story, attributes.
             //Color : yellow, green, red/black,
             //Texture: fur, scales, clamy,..
+            //Occupation
             //Disposition:
             
 
@@ -117,12 +113,44 @@ requestFace(image, function (faceResult) {
     console.log(`Face information: ${faceResult.age}`);
 
     // $("img#mv-test").imgAreaSelect({ x1: 207, y1: 207, x2: 446, y2:  339});
-
+    
+    determineSpecies(faceResult);
+    console.log("Ann faceResult.age",faceResult.age);
+    
     clipFace(faceResult);
     console.log("test");
 
 });
 
+//***Function customsAgent - Master sequence */
+let customsAgent = function() {
+    //Customs agent object: Questions and directs user, manipulates user interface, and sequences other funtions.
+    const agentScript = {
+
+   
+    ["0 Step Forward, Face the Camera, and Press Ready", "1 (Scanning Facial Features)", "2 Species Identified"]
+}
+        for (let i=0; i < agentScript.length; i++) {
+            console.log("agentScript", i, agentScript[i]);
+            let commandQuestion = agentScript[i];
+            $("#agentDeclare").text(commandQuestion);
+        };
+    };  
+
+
 $(".submitDeclare").on("click", translate);
 
+//run customsAgent script
+$(".submitDeclare").on("click", customsAgent);
 
+
+
+//Determine species/language using Face++ attributes.
+
+
+
+//Greater value of emotion determines ...
+//Throw age into the equation
+//Make sure results in a variety of species..
+
+//Display species/language on translator area.
