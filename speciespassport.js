@@ -38,9 +38,34 @@ const Passport = function() {
     // };
 
     
+    // const flowDirect = function() {
+    //     event.preventDefault();
+    //     switch (command) {
+    //         case 'pirate':
+    //             pirate ();
+    //             break;
+    //         case 'vulcan':
+    //             vulcan();
+    //             break;
+    //         case 'klingon':
+    //             klingon();
+    //             break;
+    //         case 'romulan':
+    //             romluan();
+    //             break;
+    //         case 'elves':
+    //             elves();
+    //             break;
+    //         case 'swedChef':
+    //             swedChef();
+    //             break;
+    //     }
+    //     console.log("switch");
+    // };
 
 
 
    
     $('#passportCard').append();
 };
+
