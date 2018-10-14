@@ -1,4 +1,6 @@
+$(document).ready(function () {
 
+<<<<<<< HEAD
 //Display User's photo on page--Makiko
    
 
@@ -81,37 +83,38 @@
 
 
 // var cloudinary = require('cloudinary');
+=======
+    var faceResult = {
+        height: "",
+        width: "",
+        top: "",
+        left: "",
+        gender: "",
+        age: "",
+        emotion: {},
+        skinstatus: {},
+        headpose: {}
+>>>>>>> 161769a4b05a2c451aec1e52ac4c891a5ae4ffe1
 
-// cloudinary.config({ 
-//     cloud_name: 'dyais46lc', 
-//     api_key: '169225284978189', 
-//     api_secret: 'TkVw1kJXn8OeNow9f10qSSA8VS4' 
-//   });
-  
-//   cloudinary.imageTag('40648536_10156056664519285_7445547226065010688_n.jpg', {height: 539, radius: 8, width: 613, crop: "scale"}).toHtml();
+    };
 
-const image = "https://res.cloudinary.com/dyais46lc/image/upload/v1539310622/faceSquare.jpg"
+    var myUploadWidget;
 
-let faceResult = {
-    height:"",
-    width:"",
-    top:"",
-    left:"",
-    gender:"",
-    age:"",
-    emotion:{},
-    skinstatus:{},
-    headpose:{}
+    document.getElementById("upload_widget_opener").addEventListener("click", function () {
+        myUploadWidget = cloudinary.openUploadWidget({
+            cloudName: 'dyais46lc', uploadPreset: 'tqz7drcd'
+        }, (error, result) => {
 
-};
+            if (result && result.event === "success") {
+                console.log(result, result.event);
 
-// faceResult = requestFace(image);
+                let facePlusUrl = result.info.url;
+                let pictureName = result.info.path;
 
-// console.log(`Face information: ${faceResult.age}`);
+                renderPassportPicture(facePlusUrl);
 
-requestFace(image, function (faceResult) {
-    console.log(`Face information: ${faceResult.age}`);
 
+<<<<<<< HEAD
     // $("img#mv-test").imgAreaSelect({ x1: 207, y1: 207, x2: 446, y2:  339});
     
     determineSpecies(faceResult);
@@ -119,9 +122,14 @@ requestFace(image, function (faceResult) {
     
     clipFace(faceResult);
     console.log("test");
+=======
+                requestFace(facePlusUrl, function (faceResult) {
 
-});
+>>>>>>> 161769a4b05a2c451aec1e52ac4c891a5ae4ffe1
 
+                    console.log(`Face information: ${faceResult.age}`);
+
+<<<<<<< HEAD
 //***Function customsAgent - Master sequence */
 let customsAgent = function() {
     //Customs agent object: Questions and directs user, manipulates user interface, and sequences other funtions.
@@ -154,3 +162,16 @@ $(".submitDeclare").on("click", customsAgent);
 //Make sure results in a variety of species..
 
 //Display species/language on translator area.
+=======
+                    clipFace(faceResult, pictureName);
+                    console.log("test");
+
+                });
+            }
+
+        }, false);
+
+    });
+
+});
+>>>>>>> 161769a4b05a2c451aec1e52ac4c891a5ae4ffe1
