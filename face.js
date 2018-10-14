@@ -1,9 +1,6 @@
-const alienPic = ["elf", "fudd", "huttese", "gungan", "klingon", "pirate", "romulan", "shakespeare", "sith", "vulcan", "chef", "yoda"];
-<<<<<<< HEAD
-
-=======
+const alienPic = ["sindarin", "fudd", "huttese", "gungan", "klingon", "pirate", "romulan", "shakespeare", "sith", "vulcan", "chef", "yoda"];
 let alienChosen;
->>>>>>> d0251b69b3132ae2eb5a66b94d42bf45a117084b
+
 let faceInformation = {
     height: "",
     width: "",
@@ -15,7 +12,7 @@ let faceInformation = {
     skinstatus: {},
     headpose: {}
 
-};
+}
 
 const renderPassportPicture = function (faceUrl) {
 
@@ -64,13 +61,13 @@ const analyzeFace = function (apiKey, apiSecret, faceToken, face, cb) {
         cb(faceInformation);
 
     }).catch(function () {
-        alert("Could not retrieve the information. Please try again later.");
+        alert("Could not retrieve the information. Please try again later.")
     });
 
 
 
 
-};
+}
 
 
 const requestFace = function (image, cb) {
@@ -92,10 +89,10 @@ const requestFace = function (image, cb) {
         analyzeFace(apiKey, apiSecret, face[0].face_token, face, cb);
 
     }).catch(function () {
-        alert("Could not retrieve the information. Please try again later.");
+        alert("Could not retrieve the information. Please try again later.")
     });
 
-};
+}
 
 //Clip to have only face part of picture using face++ analysis
 const clipFace = function (information, pictureName) {
@@ -111,6 +108,7 @@ const clipFace = function (information, pictureName) {
     $("#alien-picture").empty();
 
     var imgPicture = new Image();
+    // imgPicture.src = "./assets/sith.gif";
     imgPicture.src = url;
     imgPicture.onload = function () {
         var ctx = $('#alien-picture')[0].getContext('2d');
@@ -122,19 +120,13 @@ const clipFace = function (information, pictureName) {
 
 
     var img2 = new Image();
-<<<<<<< HEAD
     // img2.src = url;
     // img2.src = "./assets/sith.gif";
     // img2.src = "./assets/yoda.gif";
 
     const alien = alienPic[Math.round(Math.random() * (alienPic.length - 1))];
     img2.src = `./assets/${alien}.gif`;
-
-=======
-    const alien = alienPic[Math.round(Math.random() * (alienPic.length - 1))];
     alienChosen = alien;
-    img2.src = `./assets/${alien}.gif`;
->>>>>>> d0251b69b3132ae2eb5a66b94d42bf45a117084b
     img2.onload = function () {
         var ctx2 = $('#alien-picture')[0].getContext('2d');
         ctx2.globalCompositeOperation = 'source-over'; 
@@ -143,4 +135,4 @@ const clipFace = function (information, pictureName) {
         ctx2.save();
     };
 
-};
+}

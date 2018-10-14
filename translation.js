@@ -13,5 +13,5 @@ const translate = function() {
         $("#userDeclare").val(ans);
     }).catch(function() {
         alert("Failed to retieve translation information!");
-    });
-};
+    })
+}
