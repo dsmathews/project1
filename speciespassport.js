@@ -8,9 +8,9 @@ const Passport = function() {
 
     const yoda = function () {
         let command = yoda;
-        let mask = yoda;
+        
         console.log('do or do not, there is not try');
-    }
+    };
     
     const pirate = function() {
         let command = pirate;
