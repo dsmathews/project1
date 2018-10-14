@@ -41,10 +41,7 @@ $(document).ready(function () {
 
                 });
             }
-
-
         }, false);
-
     });
-
+    $(".submitDeclare").on("click", translate);
 });
