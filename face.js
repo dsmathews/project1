@@ -9,7 +9,7 @@ let faceInformation = {
     skinstatus: {},
     headpose: {}
 
-}
+};
 
 const renderPassportPicture = function (faceUrl) {
 
@@ -27,7 +27,7 @@ const renderPassportPicture = function (faceUrl) {
     $("#passport-picture").append(pictureDiv);
 
 
-}
+};
 
 const analyzeFace = function (apiKey, apiSecret, faceToken, face, cb) {
 
@@ -60,13 +60,13 @@ const analyzeFace = function (apiKey, apiSecret, faceToken, face, cb) {
         cb(faceInformation);
 
     }).catch(function () {
-        alert("Could not retrieve the information. Please try again later.")
+        alert("Could not retrieve the information. Please try again later.");
     });
 
 
 
 
-}
+};
 
 
 const requestFace = function (image, cb) {
@@ -88,10 +88,10 @@ const requestFace = function (image, cb) {
         analyzeFace(apiKey, apiSecret, face[0].face_token, face, cb);
 
     }).catch(function () {
-        alert("Could not retrieve the information. Please try again later.")
+        alert("Could not retrieve the information. Please try again later.");
     });
 
-}
+};
 
 //Clip to have only face part of picture using face++ analysis
 const clipFace = function (information, pictureName) {
@@ -118,4 +118,4 @@ const clipFace = function (information, pictureName) {
 
     $("#alien-picture").append(pictureDiv);
 
-}
+};
