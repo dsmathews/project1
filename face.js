@@ -103,19 +103,31 @@ const clipFace = function (information, pictureName) {
     //Location of picture to clip and coordination.
     const url = `https://res.cloudinary.com/dyais46lc/image/upload/c_crop,g_face,h_${height},w_${width}/${pictureName}`;
 
+
     $("#alien-picture").empty();
 
-    //Appending the picture to index.html
-    const pictureDiv = $("<div>").addClass("alien-picture");
+    var imgPicture = new Image();
+    // imgPicture.src = "./assets/sith.gif";
+    imgPicture.src = url;
+    imgPicture.onload = function () {
+        var ctx = $('#alien-picture')[0].getContext('2d');
+        ctx.globalCompositeOperation = 'source-over'; 
+        // ctx.drawImage(this, 0, 0, 300, 300, 0, 0, 300, 300);
+        ctx.drawImage(this, 55, 50, 60, 80);
+        ctx.save();
+    };
 
-    const faceImg = $("<img>");
-    faceImg.attr("src", url);
-    faceImg.attr("id", "mv-test");
-    faceImg.addClass("user-picture");
-    faceImg.attr("height", "200");
 
-    pictureDiv.append(faceImg);
-
-    $("#alien-picture").append(pictureDiv);
+    var img2 = new Image();
+    // img2.src = url;
+    // img2.src = "./assets/sith.gif";
+    img2.src = "./assets/yoda.gif";
+    img2.onload = function () {
+        var ctx2 = $('#alien-picture')[0].getContext('2d');
+        ctx2.globalCompositeOperation = 'source-over'; 
+        // ctx2.drawImage(this, 40, 20, 100, 100);
+        ctx2.drawImage(this, 0, 0, 300, 300, 0, 0, 300, 300);
+        ctx2.save();
+    };
 
 }
