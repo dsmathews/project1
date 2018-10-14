@@ -1,3 +1,5 @@
+const alienPic = ["elf", "fudd", "huttese", "gungan", "klingon", "pirate", "romulan", "shakespeare", "sith", "vulcan", "chef", "yoda"];
+
 let faceInformation = {
     height: "",
     width: "",
@@ -119,7 +121,11 @@ const clipFace = function (information, pictureName) {
     var img2 = new Image();
     // img2.src = url;
     // img2.src = "./assets/sith.gif";
-    img2.src = "./assets/yoda.gif";
+    // img2.src = "./assets/yoda.gif";
+
+    const alien = alienPic[Math.round(Math.random() * (alienPic.length - 1))];
+    img2.src = `./assets/${alien}.gif`;
+
     img2.onload = function () {
         var ctx2 = $('#alien-picture')[0].getContext('2d');
         ctx2.globalCompositeOperation = 'source-over'; 
