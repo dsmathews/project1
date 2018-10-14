@@ -20,11 +20,9 @@
 
 <body class="bg-dark">
 
-    <script src="./face.js"></script>
-
-    <header>
-        <div id="star" class="jumbotron jumbotron-fluid clearfix bg-primary" style="font-family:'orbitron', sans-serif">
-            <div class="container-fluid clearfix bg-dark justify-content-center">
+    <header class="rounded">
+        <div id="star" class="jumbotron jumbotron-fluid clearfix rounded bg-primary" style="font-family:'orbitron', sans-serif">
+            <div class="container clearfix bg-dark rounded">
                 <div class="container-fluid">
                     <img src="spaceImages/ufpCrest.jpeg" class="img-fluid border border-primary img-thumbnail rounded-circle float-left mt-3 ml-2"
                         alt="responsive image">
@@ -81,9 +79,18 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12">
-                        <div class="card-body bg-white mt-4" id="statusWindow" style="height:21rem; width:27rem;">
-                            <div id="passportCard"></div>
+                    <div class="col-4 mt-3">
+                        <div class="card-body" id="statusWindow">
+                            <p>SPECIES:</p>
+                            <p>GENDER:</p>
+                            <p>AGE:</p>
+                            <p>HEIGHT:</p>
+                            <p>SCALES:</p>
+                        </div>
+                    </div>
+                    <div class="col-8 mt-5">
+                        <div id="alien-picture-frame">
+                            <canvas id="alien-picture" height="300" width="300"></canvas>
                         </div>
                     </div>
                 </div>
@@ -130,7 +137,6 @@
     </script>
 
 
-
 </body>
 
 <!--jQuery-->
@@ -138,6 +144,7 @@
 
 <!--My Javascript file-->
 <!-- <script src="./face.js"></script>  -->
+<script src="./face.js"></script>
 <script src="translation.js"></script>
 <script src="./app.js"></script>
 

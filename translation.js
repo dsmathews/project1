@@ -1,7 +1,5 @@
-const userSpecies = "pirate"; //temporary preset
-
-
 const translate = function() {
+    const userSpecies = "pirate"; //temporary preset
     const text = $("#userDeclare").val();
     const inputText = encodeURIComponent(text).replace("!", "%21").replace("%0A", "");
     const corsAnywhere = "https://cors-anywhere.herokuapp.com/";
@@ -13,11 +11,7 @@ const translate = function() {
     }).then(function(response) {
         const ans = response.contents.translated;
         $("#userDeclare").val(ans);
+    }).catch(function() {
+        alert("Failed to retieve translation information!");
     });
 };
-
-/*Test section, change lata
-let text = "Hello sir! my mother goes with me to the ocean.";
-let preset = "pirate";
-userSpecies = preset;
-*/
