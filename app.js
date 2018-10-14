@@ -23,8 +23,11 @@ $(document).ready(function () {
             if (result && result.event === "success") {
                 console.log(result, result.event);
 
-                let facePlusUrl = result.info.url;
-                let pictureName = result.info.path;
+                const facePlusUrl = result.info.url;
+                const pictureName = result.info.path;
+
+                console.log(`Face URL: ${facePlusUrl}
+                Picture name: ${pictureName}`);
 
                 renderPassportPicture(facePlusUrl);
 
@@ -35,10 +38,10 @@ $(document).ready(function () {
                     console.log(`Face information: ${faceResult.age}`);
 
                     clipFace(faceResult, pictureName);
-                    console.log("test");
 
                 });
             }
+
 
         }, false);
 
