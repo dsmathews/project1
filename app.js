@@ -19,7 +19,6 @@ $(document).ready(function () {
         myUploadWidget = cloudinary.openUploadWidget({
             cloudName: 'dyais46lc', uploadPreset: 'tqz7drcd'
         }, (error, result) => {
-
             if (result && result.event === "success") {
                 console.log(result, result.event);
 
