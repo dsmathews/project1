@@ -25,8 +25,6 @@ const renderPassportPicture = function (faceUrl) {
     pictureDiv.append(faceImg);
 
     $("#passport-picture").append(pictureDiv);
-
-
 }
 
 const analyzeFace = function (apiKey, apiSecret, faceToken, face, cb) {
