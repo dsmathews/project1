@@ -22,16 +22,18 @@
 
     <script src="./face.js"></script>
 
-    <header class="rounded">
-        <div id="star" class="jumbotron jumbotron-fluid clearfix rounded bg-primary" style="font-family:'orbitron', sans-serif">
-            <div class="container clearfix bg-dark rounded">
+    <header>
+        <div id="star" class="jumbotron jumbotron-fluid clearfix bg-primary" style="font-family:'orbitron', sans-serif">
+            <div class="container-fluid clearfix bg-dark justify-content-center">
                 <div class="container-fluid">
                     <img src="spaceImages/ufpCrest.jpeg" class="img-fluid border border-primary img-thumbnail rounded-circle float-left mt-3 ml-2"
                         alt="responsive image">
                 </div>
+                <br />
                 <div class="bg-dark text-success mt-2">
-                    <h1 class=" mt-5 text-center align-content-stretch ">Galactic Spaceport</h1>
+                    <h1 class=" mt-5 text-center align-content-stretch ">Galactic Federation Spaceport</h1>
                 </div>
+                <br />
                 <div class="ml-3 bg-dark text-success text-center clearfix">
                     <h1>Customs Agency</h1>
                 </div>
@@ -48,7 +50,8 @@
                     <div class="col-12">
                         <div class="card-body" style="height: 4rem;">
                             <!-- picture input -->
-                            <a href="#" id="upload_widget_opener" class="btn btn-success text-white">Please take a picture</a>
+                            <a href="#" id="upload_widget_opener" class="btn btn-success text-white">Please take a
+                                picture</a>
                         </div>
                     </div>
                 </div>
@@ -64,8 +67,9 @@
                 <div class="card-header">
                     Facial Analysis
                 </div>
-                <div class="card-body" id="facialAnalysis">
-                    <p>Placeholder Text</p>
+                <div class="card-body bg-dark mt-1" id="statusWindow" style="height:15rem; width:27rem;">
+                    <div id="alien-picture" class="ml-0" style="max-height:50px; max-width: 50px;"></div>
+                    <div id="facialComments"></div>
                 </div>
             </div>
             <div class="card col-md-5 bg-dark" style="height:25rem;">
@@ -74,21 +78,16 @@
                         <div class="card-header">
                             Universal Passport
                         </div>
-                        <div id="passportCard"></div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4 mt-3">
-                        <div class="card-body bg-white" id="statusWindow" style="height:15rem; width:20rem;">
-                    
-                        </div>
-                    </div>
-                    <div class="col-8 mt-3">
-                        <div id="alien-picture">
-
+                    <div class="col-12">
+                        <div class="card-body bg-white mt-4" id="statusWindow" style="height:21rem; width:27rem;">
+                            <div id="passportCard"></div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

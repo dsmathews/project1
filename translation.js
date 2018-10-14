@@ -13,8 +13,8 @@ const translate = function() {
     }).then(function(response) {
         const ans = response.contents.translated;
         $("#userDeclare").val(ans);
-    })
-}
+    });
+};
 
 /*Test section, change lata
 let text = "Hello sir! my mother goes with me to the ocean.";
