@@ -1,7 +1,7 @@
 const Passport = function() {
     $('#passportCard').empty();
     const command = '';
-    const mask = '';
+    // const mask = '';
 
     const passCard = $('<div>');
     passCard.addclass('card-body');
