@@ -38,6 +38,8 @@ $(document).ready(function () {
 
                     clipFace(faceResult, pictureName);
 
+                    speciesPassport();
+
                 });
             }
         }, false);
