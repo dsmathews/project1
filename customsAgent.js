@@ -28,8 +28,12 @@
                  
     };
     
-    const species = function(speciesName, languageName) {
-        //Call this function when species is identified.
+    const species = function() {
+        //Call this function when Face++ is done.
+        //Species identification should be done too.
+
+        let speciesName = alienChosen;
+        let languageName = alienChosen;
 
         console.log("Species Identified");
         setTimeout(function() {
@@ -71,16 +75,10 @@
     console.log("Scanning Face")       
     $("#statusArea").prepend($('<p>').text(`Scanning Face`));
       
-
-    setTimeout(function() {
-           
+    // setTimeout(function() {           
         $("#statusArea").prepend($('<p>').text(`Analyzing Features`)); 
-            //Need something to tell me when face++ is done.
-            //Temporarily assigned speciesName.
-            const speciesName = "Vulcan";
-            const languageName = "Vulcan";
-        species(speciesName);
-        }, 2000);
+            //RequestFace should now call species() function when Face++ is done.                   
+        // }, 2000);
     };
     
     const customsAgent = function() {
