@@ -112,6 +112,9 @@ const speciesPassport = function() {
     
     const flowDirect = function() {
         switch (command) {
+            case 'yoda':
+                yoda();
+                break;
             case 'pirate':
                 pirate ();
                 break;
