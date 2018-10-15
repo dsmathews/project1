@@ -37,6 +37,9 @@ $(document).ready(function () {
                     console.log(`Face information: ${faceResult.age}`);
 
                     clipFace(faceResult, pictureName);
+                    //Ann Start--call function that displays status
+                    species();
+                    //Ann End--call function that displays status
 
                 });
             }
