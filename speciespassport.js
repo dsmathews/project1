@@ -88,10 +88,10 @@ const speciesPassport = function() {
     };
 
     const sith = function() {
-        home = 'Tortuga';
-        species = 'scallywag';
-        businessType = 'marauder';
-        alertStatus = 'observe with Extreme caution';
+        home = 'Korrivan';
+        species = 'Dathomirian';
+        businessType = 'Unknown-possibly dangerous';
+        alertStatus = 'Allow to proceed, but observe with Extreme caution!';
         console.log('always two there are');
     };
 
