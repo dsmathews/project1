@@ -8,15 +8,15 @@ const speciesPassport = function() {
 
     let home ='';
     let species = '';
-    let businessType = '';
+    let affiliation = '';
     let alertStatus = '';
 
 
     const yoda = function () {
         home = 'Dagobah';
         species = 'unknown';
-        businessType = 'republic business';
-        alertStatus = 'allow to proceed';
+        affiliation = 'Jedi Order, Galactic Republic';
+        alertStatus = 'Pre-check cleared';
         
         console.log('do or do not, there is not try');
     };
@@ -24,8 +24,8 @@ const speciesPassport = function() {
     const pirate = function() {
         home = 'Tortuga';
         species = 'scallywag';
-        businessType = 'marauder';
-        alertStatus = 'observe with caution';
+        affiliation = 'Crew of the Black Pearl';
+        alertStatus = 'Observe with caution';
         console.log('This is the day you will always remember as the day you almost caught Captain Jack Sparrow');
     
     };
@@ -33,40 +33,39 @@ const speciesPassport = function() {
     const vulcan = function() {
         home = 'Vulcan';
         species = 'Vulcan';
-        businessType = 'VSA Observation';
-        alertStatus = 'Live long and prosper';
-
+        affiliation = 'Starfleet, United Federation of Planets, Vulcan Science Academy';
+        alertStatus = 'Pre-check cleared';
         console.log('fascinating');
     };
 
     const klingon = function () {
         home = 'Q\'onos';
         species = 'Klingon';
-        businessType = 'Diplomatic Envoy with Starfleet';
-        alertStatus = 'observe with caution';
+        affiliation = 'Klingon Empire, United Federation of Planets';
+        alertStatus = 'Pre-check cleared';
         console.log('Q\'apla');
     };
 
     const romulan = function () {
         home = 'Romulus';
         species = 'Romulan';
-        businessType = 'Meeting with Federation High Council';
-        alertStatus = 'observe with caution';
+        affiliation = 'Romulan Empire, Tal Shi\'ar, United Federation of Planets';
+        alertStatus = 'Pre-check cleared with reservation';
         console.log('Beware Romulans bearing gifts');
     };
 
     const sindarin = function () {
         home = 'Lothlorien';
         species = 'Elves';
-        businessType = 'Meeting with Gandalf the Grey';
-        alertStatus = 'allow to proceed';
+        affiliation = 'Calaquendi/Moriquendi';
+        alertStatus = 'Pre-check cleared';
         console.log('lothlorien');
     };
 
     const chef = function () {
         home = 'Jim Hensons Creature Shop';
         species = 'Muppet';
-        businessType = 'Cooking Convention';
+        affiliation = 'Muppet Studios';
         alertStatus = 'Bork Bork Bork';
         console.log('hurdy gurdy um di chicky');
     };
@@ -74,45 +73,48 @@ const speciesPassport = function() {
     const fudd = function () {
         home = 'Warner Studios';
         species = 'Human';
-        businessType = 'Huntin Wabbits';
-        alertStatus = 'observe with caution';
+        affiliation = 'Looney Tunes';
+        alertStatus = 'Pre-check cleared';
         console.log('wabbit season');
     };
 
     const shakespeare = function() {
         home = 'Stratford upon Avon';
         species = 'Human';
-        businessType = 'Globe Theater reconstruction';
-        alertStatus = 'no harm shall come to thee until Burnam Wood comes to Dunsinane';
+        affiliation = 'Globe Theater';
+        alertStatus = 'Pre-check cleared';
         console.log('Beware the ides of March');
     };
 
     const sith = function() {
-        home = 'Korrivan';
+        home = 'Dathomir';
         species = 'Dathomirian';
-        businessType = 'Unknown-possibly dangerous';
-        alertStatus = 'Allow to proceed, but observe with Extreme caution!';
+        affiliation = 'Sith Order';
+        alertStatus = 'Pre-check cleared with caution';
         console.log('always two there are');
     };
 
     const gungan = function() {
         home = 'Naboo';
         species = 'Gungan';
-        businessType = 'Republic Senate';
-        alertStatus = 'allow to proceed';
+        affiliation = 'Gungan Kingdom, Republic Senate, Galactic Republic,';
+        alertStatus = 'Pre-check cleared';
         console.log('meesa no worry');
     };
 
     const huttese = function() {
         home = 'Nal-Hutta';
         species = 'Hutt';
-        businessType = 'legitimate business transaction';
-        alertStatus = 'observe with Extreme caution';
+        affiliation = 'Hutt Clan, Grand Hutt Council';
+        alertStatus = 'Pre-check cleared with caution';
         console.log('tell jabba I will bring him the money');
     };
     
     const flowDirect = function() {
         switch (command) {
+            case 'yoda':
+                yoda();
+                break;
             case 'pirate':
                 pirate ();
                 break;
@@ -123,7 +125,7 @@ const speciesPassport = function() {
                 klingon();
                 break;
             case 'romulan':
-                romluan();
+                romulan();
                 break;
             case 'sindarin':
                 sindarin();
@@ -152,7 +154,7 @@ const speciesPassport = function() {
     };
     flowDirect();
 
-    passCard.html(`Home: ${home}<br /> Species: ${species}<br /> Business: ${businessType}<br />Alert Status: ${alertStatus}`);
+    passCard.html(`Home: ${home}<br /> Species: ${species}<br /> Affiliation: ${affiliation}<br />Alert Status: ${alertStatus}`);
     $('#passportCard').append(passCard);
 };
 
