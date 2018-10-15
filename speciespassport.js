@@ -40,11 +40,11 @@ const speciesPassport = function() {
     };
 
     const klingon = function () {
-        home = 'Qonos';
+        home = 'Q\'onos';
         species = 'Klingon';
         businessType = 'Diplomatic Envoy with Starfleet';
         alertStatus = 'observe with caution';
-        console.log('Qapla');
+        console.log('Q\'apla');
     };
 
     const romulan = function () {
