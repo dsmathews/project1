@@ -61,7 +61,7 @@ const analyzeFace = function (apiKey, apiSecret, faceToken, face, cb) {
         cb(faceInformation);
 
     }).catch(function () {
-        alert("Could not retrieve the information. Please try again later.")
+        console.log("Could not retrieve the information. Please try again later.");
     });
 
 
@@ -89,7 +89,7 @@ const requestFace = function (image, cb) {
         analyzeFace(apiKey, apiSecret, face[0].face_token, face, cb);
 
     }).catch(function () {
-        alert("Could not retrieve the information. Please try again later.")
+        console.log("Could not retrieve the information. Please try again later.");
     });
 
 }

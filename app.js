@@ -41,6 +41,8 @@ $(document).ready(function () {
                     species();
                     //Ann End--call function that displays status
 
+                    speciesPassport();
+
                 });
             }
         }, false);
