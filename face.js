@@ -24,6 +24,7 @@ const renderPassportPicture = function (faceUrl) {
     faceImg.attr("src", faceUrl);
     faceImg.attr("id", "passport-picture");
     faceImg.attr("height", "200");
+    faceImg.attr("width", "300");
 
     pictureDiv.append(faceImg);
 
