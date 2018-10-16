@@ -13,7 +13,7 @@
     const communicate = function(count) {
         
         //open access to translator window.
-        agentScript = ["Do you have anything to declare?","Are you carrying any of the following prohibited items?", "Where will you be staying?", "You may now proceed" ]
+        let agentScript = ["Do you have anything to declare?","Are you carrying any of the following prohibited items?", "Where will you be staying?", "You may now proceed" ]
             //on click translator
         console.log("scriptCounter-communicate", count);
         console.log("Agent script-communicate?", agentScript[count]);
