@@ -17,7 +17,8 @@ $(document).ready(function () {
 
     document.getElementById("upload_widget_opener").addEventListener("click", function () {
         myUploadWidget = cloudinary.openUploadWidget({
-            cloudName: 'dyais46lc', uploadPreset: 'tqz7drcd'
+            cloudName: 'dyais46lc', uploadPreset: 'tqz7drcd',
+            sources: ['local', 'camera', 'imageSearch'],
         }, (error, result) => {
             if (result && result.event === "success") {
                 console.log(result, result.event);
@@ -48,6 +49,7 @@ $(document).ready(function () {
         }, false);
     });
     $(".submitDeclare").on("click", translate);
+    $("#translationBtn").on("click", translationBtn);
 });
 
 //Ann Start--run customsAgent script and reset customs agent script counter for communication() function
