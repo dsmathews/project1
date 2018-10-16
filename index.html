@@ -20,16 +20,16 @@
 
 <body class="bg-dark">
 
-    <header class="rounded">
-        <button id="translationBtn" class="btn-primary float-left" ></button>
-        <div id="star" class="jumbotron jumbotron-fluid clearfix rounded bg-primary" style="font-family:'orbitron', sans-serif">
-            <div class="container clearfix bg-dark rounded">
-                <div class="container-fluid">
+    <header class="rounded bg-primary">
+        <button id="translationBtn" class="btn-primary float-left"></button>
+        <div class="jumbotron jumbotron-fluid rounded bg-primary py-1" style="font-family:'orbitron', sans-serif; ">
+            <div class="container clearfix bg-dark rounded mb-2">
+                <div class="mb-2">
                     <img src="spaceImages/ufpCrest.jpeg" class="img-fluid border border-primary img-thumbnail rounded-circle float-left mt-3 ml-2"
                         alt="responsive image">
                 </div>
                 <div class="bg-dark text-success mt-2">
-                    <h1 class=" mt-5 text-center align-content-stretch ">Galactic Federation Spaceport</h1>
+                    <h1 class="text-center align-content-stretch ">Galactic Federation Spaceport</h1>
                 </div>
                 <div class="ml-3 bg-dark text-success text-center clearfix">
                     <h1>Customs Agency</h1>
@@ -40,6 +40,7 @@
             </div>
         </div>
     </header>
+
     <div class="container-fluid mt-0 bg-dark text-success" style="font-family:'orbitron', sans-serif">
         <div class="row">
             <div class="card bg-dark col-12 col-md-4">
@@ -47,7 +48,8 @@
                     <div class="col-12">
                         <div class="card-body text-center pb-5" style="height: 4rem;">
                             <!-- picture input -->
-                            <a href="#" id="upload_widget_opener" class="btn btn-success text-white">Please take a picture</a>
+                            <a href="#" id="upload_widget_opener" class="btn btn-success text-white">Please take a
+                                picture</a>
                         </div>
                     </div>
                 </div>
@@ -84,43 +86,53 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
 
-        <div class="card col-md-4 col-xs-12 bg-dark text-success" style="height:28rem; font-family:'orbitron', sans-serif">
+        <div class="row">
 
-            <div class="card-header">
-                <!--Questions from the customs agent-->
-                <p class="form-control-agent text-white" id="agentDeclare"> <em>Please step forward, face the camera, and press the GREEN button</em></p>                
-            </div>
-            <div class="card-body">
-                <div class="form-group">
-                    <textarea class="form-control text-success bg-secondary" id="userDeclare"></textarea>
-                    <!--Ann's:  Let's show the translation in another box.  It's hard to notice when the translation is finished-->
-                    <textarea class="form-control text-success bg-secondary" id="userTranslate"></textarea>
-                    <br>
-                    <button type="submit" class="submitDeclare btn btn-primary">Translate</button>
+            <div class="card col-md-4 col-xs-12 bg-dark text-success" style="height:28rem; font-family:'orbitron', sans-serif">
+
+                <div class="card-header">
+                    <!--Questions from the customs agent-->
+                    <p class="form-control-agent text-white" id="agentDeclare"> <em>Please step forward, face the
+                            camera, and press the GREEN button</em></p>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <textarea class="form-control text-success bg-secondary" id="userDeclare"></textarea>
+                        <!--Ann's:  Let's show the translation in another box.  It's hard to notice when the translation is finished-->
+                        <textarea class="form-control text-success bg-secondary" id="userTranslate"></textarea>
+                        <br>
+                        <button type="submit" class="submitDeclare btn btn-primary">Translate</button>
+                    </div>
                 </div>
             </div>
+            <!-- ************Translation Section End*********** -->
+
+            <!--************Status Window Start-->
+            <div class="card col-md-8 col-xs-12 bg-dark text-success" style="height:28rem; font-family:'orbitron', sans-serif">
+
+
+                <div class="card-header">
+                    Status Window
+                </div>
+                <!--changed id name to statusArea because it was a duplicate-->
+                <div class="card-body" id="statusArea">
+                    <p>Step Forward. Face the screen, and press the "Please Take a Picture" button.</p>
+                </div>
+
+            </div><br>
+            <!--************Status Window End-->
+
         </div>
-<!-- ************Translation Section End*********** -->   
-
-<!--************Status Window Start-->          
-        <div class="card col-md-8 col-xs-12 bg-dark text-success" style="height:28rem; font-family:'orbitron', sans-serif">
-
-
-            <div class="card-header">
-                Status Window
-            </div>
-            <!--changed id name to statusArea because it was a duplicate-->
-            <div class="card-body" id="statusArea">
-                    <p>Step Forward. Face the screen, and press the "Please Take a Picture" button.</p>                           
-            </div>
-
-        </div><br>
-<!--************Status Window End-->  
-
     </div>
+    
+    
+
+
+
+
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
