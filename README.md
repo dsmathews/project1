@@ -2,7 +2,7 @@
 
 ## Description
 Are you traveling to Earth from another space?
-If so, you need to go through the custom using this application.
+If so, you need to go through the customs agency by using this application.
 
 ## API used:
 * [Fun Translation API](https://funtranslations.com/api)
@@ -23,9 +23,16 @@ Please follow the prompt to take a picture or translate your answer.
 
 
 ## Authors:
-Ann Tuck \
-Scott Mathews \
-Ki Kim \
-Makiko Vaughan 
+Ann Tuck
+AnnTuck@AnnTuck.com
+\
+Scott Mathews
+smathewsbd@gmail.com
+\
+Ki Kim
+kikim1025@gmail.com
+\
+Makiko Vaughan
+makiko.vaughan@gmail.com
 
 
