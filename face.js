@@ -21,9 +21,9 @@ const renderPassportPicture = function (faceUrl) {
     const pictureDiv = $("<div>").addClass("passport-picture");
 
     const faceImg = $("<img>");
-    faceImg.attr("src", faceUrl);
-    faceImg.attr("id", "passport-picture");
-    faceImg.attr("height", "200");
+    faceImg.addClass("img-fluid").attr("src", faceUrl);
+    faceImg.attr("id", "passport-picture").attr("alt", "Responsive image");
+
 
     pictureDiv.append(faceImg);
 
