@@ -48,6 +48,7 @@ $(document).ready(function () {
         }, false);
     });
     $(".submitDeclare").on("click", translate);
+    $("#translationBtn").on("click", translationBtn);
 });
 
 //Ann Start--run customsAgent script and reset customs agent script counter for communication() function
