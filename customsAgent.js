@@ -6,7 +6,7 @@
     $('#userTranslate').toggleClass('bg-light');
     console.log("Git Pull if you have not");
         //Show Git Pull Image
-    $("#statusArea").prepend($('<img>').attr("src", "./assets/gitPull.gif"));
+    $("#statusArea").prepend($('<img>').addClass("img-fluid").attr("src", "./assets/gitPull.gif").attr("alt", "Responsive image"));
 
     };
     
@@ -21,7 +21,7 @@
         $('#agentDeclare').toggleClass('text-warning');
         $("#agentDeclare").text(agentScript[count]);
         if (count === 1) {
-            $("#statusArea").prepend($('<img>').attr("src", "./assets/prohibited.gif"));
+            $("#statusArea").prepend($('<img>').addClass("img-fluid").attr("src", "./assets/prohibited.gif").attr("alt", "Responsive image"));
         }
         
         if (count > 2) {
