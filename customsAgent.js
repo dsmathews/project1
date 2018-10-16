@@ -2,7 +2,8 @@
     const dismissal = function() {
     console.log("You may now proceed.", "Step aside to the autopsy area");
     $("#statusArea").prepend($('<p>').text(`You may now proceed.`));
-
+    $('#userDeclare').toggleClass('bg-light');
+    $('#userTranslate').toggleClass('bg-light');
     console.log("Git Pull if you have not");
         //Show Git Pull Image
     $("#statusArea").prepend($('<img>').attr("src", "./assets/gitPull.gif"));
@@ -17,6 +18,7 @@
             //on click translator
         console.log("scriptCounter-communicate", count);
         console.log("Agent script-communicate?", agentScript[count]);
+        $('#agentDeclare').toggleClass('text-warning');
         $("#agentDeclare").text(agentScript[count]);
         if (count === 1) {
             $("#statusArea").prepend($('<img>').attr("src", "./assets/prohibited.gif"));
@@ -53,6 +55,8 @@
         console.log("We will now commence communication it the skdjflksd language"); 
         setTimeout(function() {
             $("#statusArea").prepend($('<p>').text(`We will now commence communication it the ${languageName} language.`));
+            $('#userDeclare').toggleClass('bg-light');
+            $('#userTranslate').toggleClass('bg-light');
         }, 6000);
       
                          
