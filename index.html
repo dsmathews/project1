@@ -21,6 +21,7 @@
 <body class="bg-dark">
 
     <header class="rounded">
+        <button id="translationBtn" class="btn-primary float-left" ></button>
         <div id="star" class="jumbotron jumbotron-fluid clearfix rounded bg-primary" style="font-family:'orbitron', sans-serif">
             <div class="container clearfix bg-dark rounded">
                 <div class="container-fluid">
@@ -39,26 +40,26 @@
             </div>
         </div>
     </header>
-    <div class="wrapper mt-0 bg-dark text-success" style="font-family:'orbitron', sans-serif">
+    <div class="container-fluid mt-0 bg-dark text-success" style="font-family:'orbitron', sans-serif">
         <div class="row">
-            <div class="card bg-dark col-md-3">
-                <div class="row">
+            <div class="card bg-dark col-12 col-md-4">
+                <div class="row justify-content-center">
                     <div class="col-12">
-                        <div class="card-body" style="height: 4rem;">
+                        <div class="card-body text-center pb-5" style="height: 4rem;">
                             <!-- picture input -->
                             <a href="#" id="upload_widget_opener" class="btn btn-success text-white">Please take a picture</a>
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row justify-content-center">
                     <div class="col-12">
-                        <div id="passport-picture">
+                        <div id="passport-picture" class="text-center">
 
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card col-md-4 bg-dark" style="height:17rem;">
+            <div class="card col-12 col-md-4 bg-dark" style="height:17rem;">
                 <div class="card-header">
                     Background Information
                 </div>
@@ -66,7 +67,7 @@
                     <div id="passportCard"></div>
                 </div>
             </div>
-            <div class="card col-md-5 bg-dark" style="height:17rem;">
+            <div class="card col-12 col-md-4 bg-dark" style="height:17rem;">
                 <div class="row">
                     <div class="col-12">
                         <div class="card-header">
@@ -74,14 +75,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-4 mt-3">
-                        <div class="card-body" id="statusWindow">  
-                        </div>
-                    </div>
-                    <div class="col-8 mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-12 mt-3 text-center">
                         <div id="alien-picture-frame">
-                            <canvas id="alien-picture" height="300" width="300"></canvas>
+                            <canvas id="alien-picture" height="200" width="200"></canvas>
                         </div>
                     </div>
                 </div>
