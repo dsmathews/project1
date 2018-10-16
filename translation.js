@@ -74,6 +74,6 @@ const translationBtn = function() {
     } else {
         $(this).removeClass("btn-dark");
         $(this).addClass("btn-primary");
-        $(this).text("The Translation is off");
+        $(this).text("");
     }
 }
