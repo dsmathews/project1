@@ -108,21 +108,17 @@ const clipFace = function (information, pictureName) {
     $("#alien-picture").empty();
 
     var imgPicture = new Image();
-    // imgPicture.src = "./assets/sith.gif";
+    
     imgPicture.src = url;
     imgPicture.onload = function () {
         var ctx = $('#alien-picture')[0].getContext('2d');
         ctx.globalCompositeOperation = 'source-over'; 
-        // ctx.drawImage(this, 0, 0, 300, 300, 0, 0, 300, 300);
         ctx.drawImage(this, 55, 50, 60, 80);
         ctx.save();
     };
 
 
     var img2 = new Image();
-    // img2.src = url;
-    // img2.src = "./assets/sith.gif";
-    // img2.src = "./assets/yoda.gif";
 
     const alien = alienPic[Math.round(Math.random() * (alienPic.length - 1))];
     img2.src = `./assets/${alien}.gif`;
@@ -130,7 +126,6 @@ const clipFace = function (information, pictureName) {
     img2.onload = function () {
         var ctx2 = $('#alien-picture')[0].getContext('2d');
         ctx2.globalCompositeOperation = 'source-over'; 
-        // ctx2.drawImage(this, 40, 20, 100, 100);
         ctx2.drawImage(this, 0, 0, 300, 300, 0, 0, 300, 300);
         ctx2.save();
     };
