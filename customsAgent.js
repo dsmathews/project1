@@ -52,7 +52,8 @@
 
         console.log("We will now commence communication it the skdjflksd language"); 
         setTimeout(function() {
-            $("#statusArea").prepend($('<p>').text(`We will now commence communication it the ${languageName} language.`));
+            // $("#statusArea").prepend($('<p>').text(`We will now commence communication it the ${languageName} language.`));
+            $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/agentQuestions.gif").attr("alt", "Responsive image"));
         }, 6000);
       
                          
