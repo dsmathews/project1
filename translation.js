@@ -11,27 +11,6 @@ const translate = function() {
         $("#userTranslate").val(pauseTranslateEl);        
     //Ann End--Show the user to wait for the translation and clear the old translation
     
-//Ann Start--Temporarily bypass to avoid too many requests
-    /*
-    const bypass = function(text) {
-        const ans = text;
-        $("#userTranslate").val(ans); 
-    }
-    
-    setTimeout(function() {
-        //Ann Start--call the custom agent's script and count to the next question.
-        console.log("count",count);
-        communicate(count);
-        count = count + 1;
-        //Ann End--call the custom agent's script and count to the next question.
-        bypass(text);
-        console.log("Translate bypass time delay");     
-    }, 2000);
-*/    
-//Ann End--Temporarily bypass to avoid too many reques
-
-
-
 
     if ($("#translationBtn").hasClass("btn-primary")) {
         const userSpecies = alienChosen;
