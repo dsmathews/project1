@@ -33,18 +33,30 @@ const translate = function() {
 
 
 
-    
+    if ($("#translationBtn").hasClass("btn-primary")) {
         const userSpecies = alienChosen;
         const text = $("#userDeclare").val();
         const inputText = encodeURIComponent(text).replace("!", "%21").replace("%0A", "");
         const corsAnywhere = "https://cors-anywhere.herokuapp.com/";
         const URL = "https://api.funtranslations.com/translate/";
         const queryURL = corsAnywhere + URL + userSpecies + ".json?text=" + inputText;
-
-        if ($("#translationBtn").hasClass("btn-primary")) {
+        let apiKey;
+        switch (alienChosen) {
+            case "pirate":
+                apiKey = "YlgBEfpCCUfmdcye0sEOUweF";
+                break;
+            case "yoda":
+                apiKey = "ESnC7vI4Fe8amXwd_l5xpQeF";
+                break;
+            case "sith":
+                apiKey = "Q90VHIMhIMKix0vDfIU_LgeF";
+                break;
+        }
+      
         $.ajax({
             url: queryURL,
-            method: 'GET'
+            method: 'GET',
+            beforeSend: function(xhr){xhr.setRequestHeader('X-FunTranslations-Api-Secret', apiKey);}
         }).then(function(response) {
             const ans = response.contents.translated;
             console.log(ans);
