@@ -24,6 +24,7 @@
         console.log("Agent script-communicate?", agentScript[count]);
         $('#agentDeclare').toggleClass('text-warning');
         $("#agentDeclare").text(agentScript[count]);
+        $('#userDeclare').val("");
 
         if (count === 0) {
             $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/blank.gif").attr("alt", "Responsive image"));
@@ -85,9 +86,9 @@
         //translator visible
         //Load fist question into the translator
         console.log("What is the purpose of your trip?");
-        $("#agentDeclare").text("What is the purpose of your trip?");
         $('#userDeclare').val("");
         $('#userTranslate').val("");
+        $("#agentDeclare").text("What is the purpose of your trip?");
         //translate funtion will invoke communicate() function
     };
     
