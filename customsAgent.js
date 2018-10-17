@@ -4,7 +4,11 @@
     $("#statusArea").prepend($('<p>').text(`You may now proceed.`));
     console.log("Git Pull if you have not");
         //Show Git Pull Image
-    $("#statusArea").prepend($('<img>').attr("src", "./assets/gitPull.gif"));
+    $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/gitPull.gif").attr("alt", "Responsive image"));
+
+    setTimeout(function() {
+        $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/welcome.gif").attr("alt", "Responsive image"));
+    }, 8000);
 
     };
     
@@ -18,10 +22,19 @@
         console.log("Agent script-communicate?", agentScript[count]);
         $('#agentDeclare').toggleClass('text-warning');
         $("#agentDeclare").text(agentScript[count]);
+
+        if (count === 0) {
+            $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/blank.gif").attr("alt", "Responsive image"));
+        }
+
         if (count === 1) {
-            $("#statusArea").prepend($('<img>').attr("src", "./assets/prohibited.gif"));
+            $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/prohibited.gif").attr("alt", "Responsive image"));
         }
         
+        if (count === 2) {
+            $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/blank.gif").attr("alt", "Responsive image"));
+        }
+
         if (count > 2) {
             dismissal(); 
         }
@@ -35,17 +48,19 @@
         let speciesName = alienChosen;
         let languageName = alienChosen;
 
-        console.log("Species Identified");
+        console.log("Facial Recognition Complete");
         setTimeout(function() {
-            $("#statusArea").prepend($('<p>').text(`Species Identified:    ${speciesName}`));   
+            // $("#statusArea").prepend($('<p>').text(`Species Identified:    ${speciesName}`));   
+            $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/faceRecComp.gif").attr("alt", "Responsive image"));
         }, 2000);
 
         
       
             //pause
-        console.log("Passport Match Found");
+        console.log("Species Identified");
         setTimeout(function() {
-            $("#statusArea").prepend($('<p>').text(`Passport Match Found.`));
+            // $("#statusArea").prepend($('<p>').text(`Passport Match Found.`));
+            $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/speciesId.gif").attr("alt", "Responsive image"));
         }, 4000);
         
         
@@ -58,7 +73,7 @@
       
                          
         setTimeout(function() {
-            $("#statusArea").prepend($('<p>').text(`Please respond to the questions in the translator`)); 
+            // $("#statusArea").prepend($('<p>').text(`Please respond to the questions in the translator`)); 
         }, 8000);
              
             
@@ -67,6 +82,8 @@
         //Load fist question into the translator
         console.log("What is the purpose of your trip?");
         $("#agentDeclare").text("What is the purpose of your trip?");
+        $('#userDeclare').val("");
+        $('#userTranslate').val("");
         //translate funtion will invoke communicate() function
     };
     
@@ -74,10 +91,10 @@
     const face = function() {
 
     console.log("Scanning Face")       
-    $("#statusArea").prepend($('<p>').text(`Scanning Face`));
+    // $("#statusArea").prepend($('<p>').text(`Scanning Face`));
       
     // setTimeout(function() {           
-        $("#statusArea").prepend($('<p>').text(`Analyzing Features`)); 
+        // $("#statusArea").prepend($('<p>').text(`Analyzing Features`)); 
             //RequestFace should now call species() function when Face++ is done.                   
         // }, 2000);
     };
@@ -87,8 +104,8 @@
         count = 0;
         console.log("count reset camera", count);
         //Need to darken translator input area.
-        $("#statusArea").text('Step Forward. Face the screen, and press the "Please Take a Picture" button.');
-        
+        // $("#statusArea").text('Step Forward. Face the screen, and press the "Please Take a Picture" button.');
+        $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/scanningFace.gif").attr("alt", "Responsive image"));
         face();
 
     };

@@ -33,13 +33,15 @@ const translate = function() {
 
 
 
-    if ($("#translationBtn").hasClass("btn-primary")) {
+    
         const userSpecies = alienChosen;
         const text = $("#userDeclare").val();
         const inputText = encodeURIComponent(text).replace("!", "%21").replace("%0A", "");
         const corsAnywhere = "https://cors-anywhere.herokuapp.com/";
         const URL = "https://api.funtranslations.com/translate/";
         const queryURL = corsAnywhere + URL + userSpecies + ".json?text=" + inputText;
+
+        if ($("#translationBtn").hasClass("btn-primary")) {
         $.ajax({
             url: queryURL,
             method: 'GET'
@@ -61,8 +63,29 @@ const translate = function() {
             console.log("Failed to retieve translation information!");
         })
     } else {
-        $("#userDeclare").val("This will never change");
-        $("#userTranslate").val("This will never change");
+        // $("#userDeclare").val("This will never change");
+        // $("#userTranslate").val("This will never change");
+
+//Ann Start--Temporarily bypass to avoid too many requests
+    
+    const bypass = function(text) {
+        const ans = "Translation Function Bypassed";
+        $("#userTranslate").val(ans); 
+    }
+    
+    setTimeout(function() {
+        //Ann Start--call the custom agent's script and count to the next question.
+        console.log("count",count);
+        communicate(count);
+        count = count + 1;
+        //Ann End--call the custom agent's script and count to the next question.
+        bypass(text);
+        console.log("Translate bypass time delay");     
+    }, 2000);
+ 
+//Ann End--Temporarily bypass to avoid too many reques
+
+
     }
 }
 
