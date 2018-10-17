@@ -135,8 +135,12 @@ const clipFace = function (information, pictureName) {
 
     //Declare the variable to display the alien prototype picture
     var img2 = new Image();
-
-    alienChosen = alienPic[Math.round(Math.random() * (alienPic.length - 1))];
+    let num = Math.floor(Math.random() * (alienPic.length));
+    while(num === 3) {//current array length is always 3
+        num = Math.floor(Math.random() * (alienPic.length));
+    }
+    console.log(num);
+    alienChosen = alienPic[num];
     img2.src = `./assets/${alienChosen}.gif`;
 
     img2.onload = function () {
