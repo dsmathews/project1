@@ -52,7 +52,7 @@ const translate = function() {
                 apiKey = "Q90VHIMhIMKix0vDfIU_LgeF";
                 break;
         }
-
+      
         $.ajax({
             url: queryURL,
             method: 'GET',
@@ -75,8 +75,29 @@ const translate = function() {
             console.log("Failed to retieve translation information!");
         })
     } else {
-        $("#userDeclare").val("This will never change");
-        $("#userTranslate").val("This will never change");
+        // $("#userDeclare").val("This will never change");
+        // $("#userTranslate").val("This will never change");
+
+//Ann Start--Temporarily bypass to avoid too many requests
+    
+    const bypass = function(text) {
+        const ans = "Translation Function Bypassed";
+        $("#userTranslate").val(ans); 
+    }
+    
+    setTimeout(function() {
+        //Ann Start--call the custom agent's script and count to the next question.
+        console.log("count",count);
+        communicate(count);
+        count = count + 1;
+        //Ann End--call the custom agent's script and count to the next question.
+        bypass(text);
+        console.log("Translate bypass time delay");     
+    }, 2000);
+ 
+//Ann End--Temporarily bypass to avoid too many reques
+
+
     }
 }
 
