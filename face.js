@@ -1,6 +1,10 @@
+
 //const alienPic = ["sindarin", "fudd", "huttese", "gungan", "klingon", "pirate", "romulan", "shakespeare", "sith", "vulcan", "chef", "yoda"];
 let alienChosen = "pirate";
 
+
+
+//Returns all face++ information
 let faceInformation = {
     height: "",
     width: "",
@@ -14,37 +18,43 @@ let faceInformation = {
 
 }
 
+//Display the passport picture on the left top side
 const renderPassportPicture = function (faceUrl) {
 
+    //Initialize the screen
     $("#passport-picture").empty();
 
+    //Create <div> with class passport-picture
     const pictureDiv = $("<div>").addClass("passport-picture");
 
+    //Create an <img> tag with responsive 
     const faceImg = $("<img>");
-    faceImg.attr("src", faceUrl);
-    faceImg.attr("id", "passport-picture");
-    faceImg.attr("height", "200");
+    faceImg.addClass("img-fluid").attr("src", faceUrl);
+    faceImg.attr("id", "passport-picture").attr("alt", "Responsive image");
 
+    //Append the picture to <div>
     pictureDiv.append(faceImg);
 
+    //Append the <div> with picture to passport picture
     $("#passport-picture").append(pictureDiv);
 }
 
+//Call API to face++ to return the information
 const analyzeFace = function (apiKey, apiSecret, faceToken, face, cb) {
 
+    //Request these parameters
     const attributes = `gender,age,emotion,skinstatus,headpose`;
 
+    //ajax URL
     const analysisURL = `https://api-us.faceplusplus.com/facepp/v3/face/analyze?api_key=${apiKey}&api_secret=${apiSecret}&face_tokens=${faceToken}&return_attributes=${attributes}`;
 
-    console.log(analysisURL);
-
-    $.ajax({
+    $.ajax({ 
+        //Make a request to face++
         url: analysisURL,
         method: 'POST',
     }).then(function (response) {
 
-        console.log(response);
-
+        //Adding the result to faceInformation
         faceInformation.height = face[0].face_rectangle.height;
         faceInformation.width = face[0].face_rectangle.width;
         faceInformation.top = face[0].face_rectangle.top;
@@ -56,11 +66,11 @@ const analyzeFace = function (apiKey, apiSecret, faceToken, face, cb) {
         faceInformation.skinstatus = response.faces[0].attributes.skinstatus;
         faceInformation.headpose = response.faces[0].attributes.headpose;
 
-        console.log(`Analyze: ${faceInformation.height}`);
-
+        //Call back function for async 
         cb(faceInformation);
 
     }).catch(function () {
+        //Display an error if the call fails
         console.log("Could not retrieve the information. Please try again later.");
     });
 
@@ -69,9 +79,10 @@ const analyzeFace = function (apiKey, apiSecret, faceToken, face, cb) {
 
 }
 
-
+//Call Face++ API to get the face coordinates and face token
 const requestFace = function (image, cb) {
 
+    //API Key, API Scecret, and URL for Face++ API
     const apiKey = "z3RiaROksCQrhNWjl9AanKkCbEDUtV5W";
     const apiSecret = "rF3gmv1TiXk2Mco19sYSMvcl71lCfUfm";
     const faceURL = `https://api-us.faceplusplus.com/facepp/v3/detect?api_key=${apiKey}&api_secret=${apiSecret}&image_url=${image}`;
@@ -82,13 +93,14 @@ const requestFace = function (image, cb) {
         method: 'POST',
     }).then(function (response) {
 
+        //Get the response data
         const face = response.faces;
 
-        console.log(`face: ${face}`);
-
+        //Call another function to get more analysis
         analyzeFace(apiKey, apiSecret, face[0].face_token, face, cb);
 
     }).catch(function () {
+        //Render this message when it is failed.
         console.log("Could not retrieve the information. Please try again later.");
     });
 
@@ -101,15 +113,18 @@ const clipFace = function (information, pictureName) {
     const width = information.width;
     const height = information.height;
 
-    //Location of picture to clip and coordination.
+    //Location of picture for the clipped face picture.
     const url = `https://res.cloudinary.com/dyais46lc/image/upload/c_crop,g_face,h_${height},w_${width}/${pictureName}`;
 
-
+    //Initialize the alien picture tag
     $("#alien-picture").empty();
 
+    //Declare the variable for the clipped face picture 
     var imgPicture = new Image();
     
     imgPicture.src = url;
+
+    //Add the clipped face picture to Canvas
     imgPicture.onload = function () {
         var ctx = $('#alien-picture')[0].getContext('2d');
         ctx.globalCompositeOperation = 'source-over'; 
@@ -117,12 +132,14 @@ const clipFace = function (information, pictureName) {
         ctx.save();
     };
 
-
+    //Declare the variable to display the alien prototype picture
     var img2 = new Image();
+
 
     //const alien = alienPic[Math.round(Math.random() * (alienPic.length - 1))];
     img2.src = `./assets/${alienChosen}.gif`;
     //alienChosen = alien;
+
     img2.onload = function () {
         var ctx2 = $('#alien-picture')[0].getContext('2d');
         ctx2.globalCompositeOperation = 'source-over'; 

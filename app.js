@@ -17,7 +17,8 @@ $(document).ready(function () {
 
     document.getElementById("upload_widget_opener").addEventListener("click", function () {
         myUploadWidget = cloudinary.openUploadWidget({
-            cloudName: 'dyais46lc', uploadPreset: 'tqz7drcd'
+            cloudName: 'dyais46lc', uploadPreset: 'tqz7drcd',
+            sources: ['local', 'camera', 'imageSearch'],
         }, (error, result) => {
             if (result && result.event === "success") {
                 console.log(result, result.event);
@@ -52,5 +53,6 @@ $(document).ready(function () {
 });
 
 //Ann Start--run customsAgent script and reset customs agent script counter for communication() function
+$("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/welcome.gif").attr("alt", "Responsive image"));
 $("#upload_widget_opener").on("click", customsAgent);
 //Ann End--run customsAgent script and reset customs agent script counter for communication() function
