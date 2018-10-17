@@ -2,8 +2,6 @@
     const dismissal = function() {
     console.log("You may now proceed.", "Step aside to the autopsy area");
     $("#statusArea").prepend($('<p>').text(`You may now proceed.`));
-    $('#userDeclare').toggleClass('bg-light');
-    $('#userTranslate').toggleClass('bg-light');
     console.log("Git Pull if you have not");
         //Show Git Pull Image
     $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/gitPull.gif").attr("alt", "Responsive image"));
@@ -72,8 +70,6 @@
         setTimeout(function() {
             // $("#statusArea").prepend($('<p>').text(`We will now commence communication it the ${languageName} language.`));
             $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/agentQuestions.gif").attr("alt", "Responsive image"));
-            $('#userDeclare').toggleClass('bg-light');
-            $('#userTranslate').toggleClass('bg-light');
         }, 6000);
       
                          

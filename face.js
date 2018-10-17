@@ -1,6 +1,7 @@
 
 //const alienPic = ["sindarin", "fudd", "huttese", "gungan", "klingon", "pirate", "romulan", "shakespeare", "sith", "vulcan", "chef", "yoda"];
-let alienChosen = "pirate";
+const alienPic = ["pirate", "sith", "yoda"];
+let alienChosen;
 
 
 
@@ -135,10 +136,8 @@ const clipFace = function (information, pictureName) {
     //Declare the variable to display the alien prototype picture
     var img2 = new Image();
 
-
-    //const alien = alienPic[Math.round(Math.random() * (alienPic.length - 1))];
+    alienChosen = alienPic[Math.round(Math.random() * (alienPic.length - 1))];
     img2.src = `./assets/${alienChosen}.gif`;
-    //alienChosen = alien;
 
     img2.onload = function () {
         var ctx2 = $('#alien-picture')[0].getContext('2d');
