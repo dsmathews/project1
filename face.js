@@ -1,6 +1,7 @@
-//Global variable to declair the alien species and chosed one
-const alienPic = ["sindarin", "fudd", "huttese", "gungan", "klingon", "pirate", "romulan", "shakespeare", "sith", "vulcan", "chef", "yoda"];
-let alienChosen;
+
+//const alienPic = ["sindarin", "fudd", "huttese", "gungan", "klingon", "pirate", "romulan", "shakespeare", "sith", "vulcan", "chef", "yoda"];
+let alienChosen = "pirate";
+
 
 
 //Returns all face++ information
@@ -134,16 +135,11 @@ const clipFace = function (information, pictureName) {
     //Declare the variable to display the alien prototype picture
     var img2 = new Image();
 
-    //Select the characters randomly
-    const alien = alienPic[Math.round(Math.random() * (alienPic.length - 1))];
-    
-    //Assign the selected character's picture location
-    img2.src = `./assets/${alien}.gif`;
 
-    //Store the value of selected character
-    alienChosen = alien;
+    //const alien = alienPic[Math.round(Math.random() * (alienPic.length - 1))];
+    img2.src = `./assets/${alienChosen}.gif`;
+    //alienChosen = alien;
 
-    //Add to the Canvas for the selected character picture
     img2.onload = function () {
         var ctx2 = $('#alien-picture')[0].getContext('2d');
         ctx2.globalCompositeOperation = 'source-over'; 
