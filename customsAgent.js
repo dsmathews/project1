@@ -86,6 +86,8 @@
         //Load fist question into the translator
         console.log("What is the purpose of your trip?");
         $("#agentDeclare").text("What is the purpose of your trip?");
+        $('#userDeclare').val("");
+        $('#userTranslate').val("");
         //translate funtion will invoke communicate() function
     };
     
