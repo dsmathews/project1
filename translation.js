@@ -4,9 +4,7 @@ var count = 0;
 
 const translate = function() {
 
-    //Ann Start--Show the user to wait for the translation and clear the old translation
-        //New textblock created to show translation
-        console.log("translate");    
+    //Ann Start--Show the user to wait for the translation and clear the old translation            
         const pauseTranslateEl = "Please Wait...";
         $("#userTranslate").val(pauseTranslateEl);        
     //Ann End--Show the user to wait for the translation and clear the old translation
@@ -39,13 +37,12 @@ const translate = function() {
         }).then(function(response) {
             const ans = response.contents.translated;
             console.log(ans);
-            //$("#userDeclare").val();
+         
         //Ann Start - Let's put the translated text below the user input, because it's hard to see when it changes.
             $("#userTranslate").val(ans);
         //Ann End - Let's put the translated text below the user input, because it's hard to see when it changes.
             
-        //Ann Start--call the custom agent's script and count to the next question.
-            console.log("count",count);
+        //Ann Start--call the custom agent's script and count to the next question.            
             communicate(count);
             count = count + 1;
         //Ann End--call the custom agent's script and count to the next question.
@@ -54,9 +51,7 @@ const translate = function() {
             console.log("Failed to retieve translation information!");
         })
     } else {
-        // $("#userDeclare").val("This will never change");
-        // $("#userTranslate").val("This will never change");
-
+        
 //Ann Start--Temporarily bypass to avoid too many requests
     
     const bypass = function(text) {
@@ -65,16 +60,13 @@ const translate = function() {
     }
     
     setTimeout(function() {
-        //Ann Start--call the custom agent's script and count to the next question.
-        console.log("count",count);
+        //Call the custom agent's script and count to the next question.        
         communicate(count);
         count = count + 1;
-        //Ann End--call the custom agent's script and count to the next question.
-        bypass(text);
-        console.log("Translate bypass time delay");     
+        bypass(text);          
     }, 2000);
  
-//Ann End--Temporarily bypass to avoid too many reques
+//Ann End--Temporarily bypass to avoid too many requests
 
 
     }
