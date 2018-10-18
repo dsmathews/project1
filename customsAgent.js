@@ -1,44 +1,55 @@
+//Customs Agent master sequence guides user through passport control process
+//Displays status images and directs users attention to facial scanning, translation
+//Prompts users with questions from the agent's, dismiss user, and next user.
+
 
     const dismissal = function() {
-    console.log("You may now proceed.", "Step aside to the autopsy area");
-    $("#statusArea").prepend($('<p>').text(`You may now proceed.`));
-    console.log("Git Pull if you have not");
-        //Show Git Pull Image
-    $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/gitPull.gif").attr("alt", "Responsive image"));
+   
+        //Show Dismissal Image
+        $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/gitPull.gif").attr("alt", "Responsive image"));
 
-    setTimeout(function() {
+        setTimeout(function() {
+        //Show Welcome page after dismissal timeout.
         $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/welcome.gif").attr("alt", "Responsive image"));
-    }, 8000);
+        }, 8000);
 
     };
     
     
     const communicate = function(count) {
-        
-        //open access to translator window.
-        let agentScript = ["Do you have anything to declare?","Are you carrying any of the following prohibited items?", "Where will you be staying?", "You may now proceed" ]
-            //on click translator
-        console.log("scriptCounter-communicate", count);
-        console.log("Agent script-communicate?", agentScript[count]);
-        $('#agentDeclare').toggleClass('text-warning');
-        $("#agentDeclare").text(agentScript[count]);
-        $('#userDeclare').val("");
+        //Funtion is called when Translate button is clicked.
 
+        //Array holds Customs Agent's script
+        let agentScript = ["Do you have anything to declare?","Are you carrying any of the following prohibited items?", "Where will you be staying?", "You may now proceed" ]
+           
+        //*/Customs Agents questions/directions.
+
+            //Change text color with each question to show user that a new question has appeared.
+            $('#agentDeclare').toggleClass('text-warning');
+            //Show customs agent question and clear user input
+            $("#agentDeclare").text(agentScript[count]);
+            $('#userDeclare').val("");
+
+        //Status images that corellate with questions.
+        //Blank    
         if (count === 0) {
             $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/blank.gif").attr("alt", "Responsive image"));
-        }
+        };
 
+        //Prohibited Items
         if (count === 1) {
             $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/prohibited.gif").attr("alt", "Responsive image"));
-        }
-        
+        };
+
+        //Blank
         if (count === 2) {
             $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/blank.gif").attr("alt", "Responsive image"));
-        }
+        };
 
+        //Dismiss User
         if (count > 2) {
             dismissal(); 
-        }
+        };
                  
     };
     
@@ -46,68 +57,48 @@
         //Call this function when Face++ is done.
         //Species identification should be done too.
 
-        let speciesName = alienChosen;
-        let languageName = alienChosen;
-
-        console.log("Facial Recognition Complete");
-        setTimeout(function() {
-            // $("#statusArea").prepend($('<p>').text(`Species Identified:    ${speciesName}`));   
+        //Display status images to guide user through sequence
+       
+        
+        //Facial Recognition Complete
+        setTimeout(function() {            
             $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/faceRecComp.gif").attr("alt", "Responsive image"));
         }, 2000);
 
         
       
-            //pause
-        console.log("Species Identified");
+        //Species Identified      
         setTimeout(function() {
-            // $("#statusArea").prepend($('<p>').text(`Passport Match Found.`));
             $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/speciesId.gif").attr("alt", "Responsive image"));
         }, 4000);
         
         
 
-        console.log("We will now commence communication it the skdjflksd language"); 
+        //Direct user to translation area.
         setTimeout(function() {
-            // $("#statusArea").prepend($('<p>').text(`We will now commence communication it the ${languageName} language.`));
             $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/agentQuestions.gif").attr("alt", "Responsive image"));
         }, 6000);
       
                          
-        setTimeout(function() {
-            // $("#statusArea").prepend($('<p>').text(`Please respond to the questions in the translator`)); 
-        }, 8000);
-             
-            
-
-        //translator visible
-        //Load fist question into the translator
-        console.log("What is the purpose of your trip?");
+        
+        //Load fist question into the translator       
         $('#userDeclare').val("");
         $('#userTranslate').val("");
         $("#agentDeclare").text("What is the purpose of your trip?");
-        //translate funtion will invoke communicate() function
+        //translate funtion will now invoke communicate() function
     };
     
     
-    const face = function() {
-
-    console.log("Scanning Face")       
-    // $("#statusArea").prepend($('<p>').text(`Scanning Face`));
-      
-    // setTimeout(function() {           
-        // $("#statusArea").prepend($('<p>').text(`Analyzing Features`)); 
-            //RequestFace should now call species() function when Face++ is done.                   
-        // }, 2000);
-    };
+    
     
     const customsAgent = function() {
-        console.log("customsAgent function invoked.  'Please take a picture button' was pressed. ");
-        count = 0;
-        console.log("count reset camera", count);
-        //Need to darken translator input area.
-        // $("#statusArea").text('Step Forward. Face the screen, and press the "Please Take a Picture" button.');
-        $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/scanningFace.gif").attr("alt", "Responsive image"));
-        face();
+        //customsAgent function is invoked when camera button is click, and itiates master sequence.
+
+        //Initialize customs agent question counter
+        count = 0;      
+       
+        //Display status image indicating face scanning in progress.
+        $("#statusArea").html($('<img>').addClass("img-fluid").attr("src", "./assets/scanningFace.gif").attr("alt", "Responsive image"));     
 
     };
 
